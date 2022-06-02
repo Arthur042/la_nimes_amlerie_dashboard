@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { Stats } from 'src/app/models/stats';
 import { SignInService } from 'src/app/services/sign-in.service';
 import { StatsService } from 'src/app/services/stats.service';
@@ -27,5 +27,8 @@ export class GraphComponent implements OnInit {
     this.signInservice.doLogout();
   }
 
-
+//   @HostListener('window:beforeunload', ['$event'])
+// beforeunloadHandler() {
+//   localStorage.removeItem('access_token');
+// }
 }

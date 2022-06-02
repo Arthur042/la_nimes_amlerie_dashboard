@@ -29,6 +29,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { GraphAbandonComponent } from './components/graph-abandon/graph-abandon.component';
 import { GraphConversionCommandeComponent } from './components/graph-conversion-commande/graph-conversion-commande.component';
 import { GraphConversionPanierComponent } from './components/graph-conversion-panier/graph-conversion-panier.component';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatNativeDateModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,7 @@ import { GraphConversionPanierComponent } from './components/graph-conversion-pa
     GraphAbandonComponent,
     GraphConversionCommandeComponent,
     GraphConversionPanierComponent,
+    DatePickerComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,9 @@ import { GraphConversionPanierComponent } from './components/graph-conversion-pa
     NgxChartsModule,
     JwtModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule
     
   ],
   providers: [
