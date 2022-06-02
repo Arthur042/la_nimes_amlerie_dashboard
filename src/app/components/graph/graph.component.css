@@ -1,8 +1,104 @@
 mat-toolbar{
     display: flex;
     align-items: center;
+    margin-bottom: 1rem;
 }
+
+img{
+    width: 35px;
+    height: 35px;
+}
+
 p{
     margin-bottom: 5px;
     margin-right: 1rem;
+}
+
+#basicStat{
+    display:  flex;
+    align-items: center;
+    width: 163px;
+    margin-left: 30px;
+    padding-bottom: 10px;
+    height: 50px;
+    border-right: 1px solid rgba(22, 22, 22, 0.307);
+}
+
+#basicStat:last-child{
+    border-right: none;
+}
+#basicStat:first-child{
+    margin-left: none;
+}
+
+#displayPage{
+    margin: 1rem;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+#centerContent{
+    position: relative;
+    margin: auto;
+}
+#bgPage{
+    overflow: hidden;
+}
+
+#displayCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: .5rem;
+}
+
+mat-card-title, h1, h5, mat-card-content {
+ margin: 0;
+}
+#statDisplay{
+    display: flex;
+    border-top: 1px solid rgba(22, 22, 22, 0.307);
+}
+
+app-graph1{
+    margin-bottom: 1rem;
+}
+
+#graphStatColumn{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    width: 745px;
+    height: fit-content;
+    padding-bottom: 0 !important;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+}
+app-graph-visite{
+    height: 263px;
+}
+
+#displayTopPage{
+    display: flex;
+    flex-direction: row;
+}
+
+
+#displayUnderFirstGraph{
+    position: absolute;
+    top: 436px;
+    left: 0;
+    display: flex;
+}
+
+app-graph1, app-graph-conversion-panier{
+    margin-right: 1rem;
+}
+
+#displayBottom{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
 }

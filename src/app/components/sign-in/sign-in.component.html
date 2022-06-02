@@ -15,6 +15,7 @@
                 </div>
             </mat-card-content>
             <mat-card-footer>
+                <mat-error *ngIf="apiError">{{ apiError }}</mat-error>
                 <button [disabled]="isValide.invalid" mat-raised-button color="primary">Se connecter</button>
             </mat-card-footer>
         </form>

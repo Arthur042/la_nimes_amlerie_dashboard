@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { JwtModule } from "@auth0/angular-jwt";
 
 
 
@@ -19,12 +20,27 @@ import { GraphComponent } from './components/graph/graph.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { IntertceptorInterceptor } from './interceptor/intertceptor.interceptor';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { Graph1Component } from './components/graph1/graph1.component';
+import { GraphVisiteComponent } from './components/graph-visite/graph-visite.component';
+import { TableArticleComponent } from './components/table-article/table-article.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { GraphAbandonComponent } from './components/graph-abandon/graph-abandon.component';
+import { GraphConversionCommandeComponent } from './components/graph-conversion-commande/graph-conversion-commande.component';
+import { GraphConversionPanierComponent } from './components/graph-conversion-panier/graph-conversion-panier.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SignInComponent,
-    GraphComponent
+    GraphComponent,
+    Graph1Component,
+    GraphVisiteComponent,
+    TableArticleComponent,
+    GraphAbandonComponent,
+    GraphConversionCommandeComponent,
+    GraphConversionPanierComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,7 +57,11 @@ import {MatToolbarModule} from '@angular/material/toolbar';
     ToastrModule.forRoot({
       timeOut: 3000,
     }),
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule,
+    JwtModule,
+    MatTableModule,
+    MatPaginatorModule
     
   ],
   providers: [

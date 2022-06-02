@@ -1,0 +1,17 @@
+<mat-card>
+    <h3>Pourcentage de conversion de panier</h3>
+    <p>Janvier 2022</p>
+    <ngx-charts-area-chart
+  [view]="[600, 200]"
+  [scheme]="'ocean'"
+  [legend]="legend"
+  [xAxis]="xAxis"
+  [yAxis]="yAxis"
+  [timeline]="timeline"
+  [results]="multi">
+</ngx-charts-area-chart>
+<div>
+    <h2>{{ abdnMoy }}%</h2>
+    <p>Taux d’abandon</p>
+</div>
+</mat-card>

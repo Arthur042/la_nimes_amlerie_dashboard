@@ -1,4 +1,75 @@
-<mat-toolbar>
-    <p>Bonjour Mr Kappar</p>
-    <button (click)="logOut()" mat-stroked-button color="primary">Se déconnecter</button>
-</mat-toolbar>
+<div id="bgPage">
+    <div id="displayPage">
+        <div id="centerContent">
+        <mat-toolbar>
+            <p>Bonjour Mr Kappar</p>
+            <button (click)="logOut()" mat-stroked-button color="primary">Se déconnecter</button>
+        </mat-toolbar>
+        
+            <div id="displayTopPage">
+                <mat-card id="graphStatColumn">
+                <app-graph-visite></app-graph-visite>
+                <div id="statDisplay">
+                    <div id="basicStat">
+                        <img src="../../../assets/CA.png" alt="logo Chiffred'affaire">
+                        <div id="displayCard">
+                            <mat-card-title>
+                                <h5>Chiffre d'affaire</h5>
+                            </mat-card-title>
+            
+                            <mat-card-content>
+                            <h1>{{ stats.montantVenteTotal }} €</h1>
+                            </mat-card-content>
+                        </div>
+                    </div>
+                    <div id="basicStat">
+                        <img src="../../../assets/commande.png" alt="logo Chiffred'affaire">
+                        <div id="displayCard">
+                            <mat-card-title>
+                                <h5>Total de commande</h5>
+                            </mat-card-title>
+            
+                            <mat-card-content>
+                            <h1>{{ stats.nbCommand }}</h1>
+                            </mat-card-content>
+                        </div>
+                    </div>
+                    <div id="basicStat">
+                        <img src="../../../assets/panier.png" alt="logo Chiffred'affaire">
+                        <div id="displayCard">
+                            <mat-card-title>
+                                <h5>Total de Panier</h5>
+                            </mat-card-title>
+            
+                            <mat-card-content>
+                            <h1>{{ stats.nbPanier }}</h1>
+                            </mat-card-content>
+                        </div>
+                    </div>
+                    <div id="basicStat">
+                        <img src="../../../assets/icon1.png" alt="logo Chiffred'affaire">
+                        <div id="displayCard">
+                            <mat-card-title>
+                                <h5>Panier moyen</h5>
+                            </mat-card-title>
+            
+                            <mat-card-content>
+                            <h1>{{ moyPanier }}</h1>
+                            </mat-card-content>
+                        </div>
+                    </div>
+                </div>
+                </mat-card>
+                <app-table-article></app-table-article>
+            </div>
+            <div id="displayUnderFirstGraph">
+                <app-graph1></app-graph1>
+                <app-graph-abandon></app-graph-abandon>
+            </div>
+            <div id="displayBottom">
+                <app-graph-conversion-panier id="conversionPanier"></app-graph-conversion-panier>
+                <app-graph-conversion-commande></app-graph-conversion-commande>
+            </div>
+        </div>
+    </div>
+</div>
