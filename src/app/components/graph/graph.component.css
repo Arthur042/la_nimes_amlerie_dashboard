@@ -59,9 +59,7 @@ p{
     position: relative;
     margin: auto;
 }
-#bgPage{
-    overflow: hidden;
-}
+
 
 #displayCard{
     display: flex;

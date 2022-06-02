@@ -18,6 +18,9 @@ export class SignInService {
   constructor( private router : Router, private toastr: ToastrService, private http : HttpClient) { }
 
   signIn(mail : SignIn) :Observable<any>{
+    if(localStorage.getItem('access_token')){
+      localStorage.removeItem('access_token');
+    }
     return this.http.post<any>(this.apiUrl + 'authentication_token', mail);
   }
 
