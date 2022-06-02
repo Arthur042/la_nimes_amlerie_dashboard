@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { LegendPosition, NgxChartsModule } from '@swimlane/ngx-charts';
+import { curveCatmullRom } from 'd3-shape';
 
 @Component({
   selector: 'app-graph-visite',
@@ -89,6 +90,7 @@ export class GraphVisiteComponent {
   xAxisLabel: string = 'Date';
   yAxisLabel: string = 'Nombre de visite';
   timeline: boolean = true;
+  curve = curveCatmullRom;
   
 
   constructor() { }
