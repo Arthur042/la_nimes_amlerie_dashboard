@@ -30,7 +30,6 @@ export class TableArticleComponent implements OnInit {
          article.total_sell = element.total_price;
          this.data.push(article);
     })
-      console.log(this.data)
     if(this.dataSource){
     this.dataSource.data = this.data;
     this.loading = false;

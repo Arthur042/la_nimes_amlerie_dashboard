@@ -42,4 +42,8 @@ export class StatsService {
   getArticle() :Observable<Article[]> {
     return this.http.get<Article[]>(this.apiUrl + 'stats/products_sell_list');
   }
+
+  getVisitorPart() :Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'stats/number_visitors');
+  }
 }

@@ -2,6 +2,7 @@ import {
   Component,
   OnInit
 } from '@angular/core';
+import {StatsService} from "../../services/stats.service";
 
 @Component({
   selector: 'app-graph-conversion-panier',
@@ -9,56 +10,7 @@ import {
   styleUrls: ['./graph-conversion-panier.component.css']
 })
 export class GraphConversionPanierComponent implements OnInit {
-  multi: any[] = [{
-      "name": "Nb visite",
-      "series": [{
-          "name": "semaine 1",
-          "value": 326
-        },
-        {
-          "name": "semaine 2",
-          "value": 456
-        },
-        {
-          "name": "semaine 3",
-          "value": 521
-        },
-        {
-          "name": "semaine 4",
-          "value": 297
-        },
-        {
-          "name": "semaine 5",
-          "value": 412
-        }
-      ]
-    },
-
-    {
-      "name": "Nb Panier",
-      "series": [{
-          "name": "semaine 1",
-          "value": 213
-        },
-        {
-          "name": "semaine 2",
-          "value": 214
-        },
-        {
-          "name": "semaine 3",
-          "value": 239
-        },
-        {
-          "name": "semaine 4",
-          "value": 153
-        },
-        {
-          "name": "semaine 5",
-          "value": 291
-        }
-      ]
-    },
-  ];
+  multi: any[] = [];
   abdnMoy: number = 0;
   view: any[] = [700, 300];
 
@@ -70,22 +22,30 @@ export class GraphConversionPanierComponent implements OnInit {
   yAxis: boolean = false;
   timeline: boolean = true;
 
-  constructor() {}
+  constructor(private statsService: StatsService) {}
   ngOnInit(): void {
+
     let nbVisite: number = 0;
     let nbPanier: number = 0;
-    this.multi.forEach(element => {
-      if (element.name == "Nb Panier") {
-        element.series.forEach((element3: any) => {
-          nbPanier += element3.value;
-        });
-      } else {
-        element.series.forEach((element2: any) => {
-          nbVisite += element2.value;
+    this.statsService.getVisitorPart().subscribe(data => {
+        this.multi = data;
+        this.multi.forEach(element => {
+          console.log(element)
+          if (element.name == "Nb Panier") {
+            element.series.forEach((element3: any) => {
+              nbPanier += element3.value;
+            });
+          } else {
+            element.series.forEach((element2: any) => {
+              nbVisite += element2.value;
+            })
+          }
         })
+        console.log(nbPanier);
+        console.log(nbVisite);
+        this.abdnMoy = Math.round((nbPanier / nbVisite) * 100);
       }
-    })
-    this.abdnMoy = Math.round((nbPanier / nbVisite) * 100);
+    )
   }
 
 }
