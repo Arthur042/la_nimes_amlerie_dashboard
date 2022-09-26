@@ -1,21 +1,11 @@
 <mat-card>
     <h3>Pourcentage de paniers abandonnées</h3>
     <p>Janvier 2022</p>
-    <ngx-charts-bar-vertical-2d
-  [view]="[250, 110]"
-  [scheme]="'fire'"
-  [results]="multi"
-  [gradient]="gradient"
-  [xAxis]="showXAxis"
-  [yAxis]="showYAxis"
-  [legend]="showLegend"
-  [showXAxisLabel]="showXAxisLabel"
-  [showYAxisLabel]="showYAxisLabel"
-  [groupPadding]="2"
-  [barPadding]="3">
-</ngx-charts-bar-vertical-2d>
-<div>
-    <h2>{{ abdnMoy }}%</h2>
-    <p>Taux d’abandon</p>
-</div>
+  <ngx-charts-advanced-pie-chart
+    [view]="[400, 200]"
+    [scheme]="'fire'"
+    [results]="single"
+    [gradient]="gradient"
+  >
+  </ngx-charts-advanced-pie-chart>
 </mat-card>

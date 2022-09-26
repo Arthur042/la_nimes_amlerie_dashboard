@@ -76,6 +76,10 @@ mat-card-title, h1, h5, mat-card-content {
     border-top: 1px solid rgba(22, 22, 22, 0.307);
 }
 
+#statDisplay h1 {
+  font-size: 1rem;
+}
+
 app-graph1{
     margin-bottom: 1rem;
 }

@@ -21,16 +21,16 @@ export class TableArticleComponent implements OnInit {
 
   ngOnInit(): void {
     this.stats.getArticle().subscribe((data : any) => {
-      let datatemp = data['hydra:member'];
+      let datatemp = data;
 
-      datatemp.forEach((element : any) => {  
+      datatemp.forEach((element : any) => {
         let article = new Article();
-         article.id = element.id;
-         article.designation = element.designation;
-         article.prix = element.prix;
-         article.lignesCommandes = element.lignesCommandes.length;
+         article.title = element.title;
+         article.nb_sell = element.nb_sell;
+         article.total_sell = element.total_price;
          this.data.push(article);
     })
+      console.log(this.data)
     if(this.dataSource){
     this.dataSource.data = this.data;
     this.loading = false;

@@ -1,4 +1,4 @@
-export class Graph1 {
+export class Recurrance {
     name ?: string;
     value ?: number;
 

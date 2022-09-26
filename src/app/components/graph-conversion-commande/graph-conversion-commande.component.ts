@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Graph1 } from 'src/app/models/graph1';
+import { Recurrance } from 'src/app/models/graph1';
 import { StatsService } from 'src/app/services/stats.service';
 
 @Component({
@@ -8,17 +8,12 @@ import { StatsService } from 'src/app/services/stats.service';
   styleUrls: ['./graph-conversion-commande.component.css']
 })
 export class GraphConversionCommandeComponent implements OnInit {
-  single : Graph1[] = [
-    {
-      "name": "Paniers non converti",
-      "value": 861
-    },
-    {
-      "name": "Paniers converti",
-      "value": 564
-    },
-  ];
+  single : Recurrance[] = [];
   ngOnInit(): void {
+    this.statsService.getConvert().subscribe(data => {
+        this.single = data;
+      }
+    )
   }
   // options
   gradient: boolean = true;
@@ -27,6 +22,6 @@ export class GraphConversionCommandeComponent implements OnInit {
   isDoughnut: boolean = true;
 
   constructor(private statsService: StatsService) { }
-  
+
 
 }

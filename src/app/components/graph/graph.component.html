@@ -9,7 +9,7 @@
                 <button (click)="logOut()" mat-stroked-button color="primary">Se déconnecter</button>
             </div>
         </mat-toolbar>
-        
+
             <div id="displayTopPage">
                 <mat-card id="graphStatColumn">
                 <app-graph-visite></app-graph-visite>
@@ -20,9 +20,9 @@
                             <mat-card-title>
                                 <h5>Chiffre d'affaire</h5>
                             </mat-card-title>
-            
+
                             <mat-card-content>
-                            <h1>{{ stats.montantVenteTotal }} €</h1>
+                            <h1>{{ stats.totalSell.totalSell }}€</h1>
                             </mat-card-content>
                         </div>
                     </div>
@@ -32,9 +32,9 @@
                             <mat-card-title>
                                 <h5>Total de commande</h5>
                             </mat-card-title>
-            
+
                             <mat-card-content>
-                            <h1>{{ stats.nbCommand }}</h1>
+                            <h1>{{ stats.totalOrdered.totalOrdered }}</h1>
                             </mat-card-content>
                         </div>
                     </div>
@@ -44,9 +44,9 @@
                             <mat-card-title>
                                 <h5>Total de Panier</h5>
                             </mat-card-title>
-            
+
                             <mat-card-content>
-                            <h1>{{ stats.nbPanier }}</h1>
+                            <h1>{{ stats.totalBag.totalBag }}</h1>
                             </mat-card-content>
                         </div>
                     </div>
@@ -56,9 +56,9 @@
                             <mat-card-title>
                                 <h5>Panier moyen</h5>
                             </mat-card-title>
-            
+
                             <mat-card-content>
-                            <h1>{{ moyPanier }}</h1>
+                            <h1>{{ stats.moyBag.BagMoy }}€</h1>
                             </mat-card-content>
                         </div>
                     </div>

@@ -1,15 +1,11 @@
 export class Article {
-    id ?: number;
-    designation ?: string;
-    prix ?: number;
-    lignesCommandes ?: number;
-    category ?: string;
+    title ?: string;
+    nb_sell ?: number;
+    total_sell ?: number;
 
-    constructor(id ?: number, designation ?: string, prix ?: number, lignesCommandes ?: number, category ?: string) {
-        this.id = id;
-        this.designation = designation;
-        this.prix = prix;
-        this.lignesCommandes = lignesCommandes;
-        this.category = category;
+    constructor(title ?: string, nb_sell ?: number, total_sell ?: number) {
+        this.title = title;
+        this.nb_sell = nb_sell;
+        this.total_sell = total_sell;
     }
 }

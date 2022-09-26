@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl : 'http://3.94.87.10/apibusinesscase/public/'
+  apiUrl : 'http://la-nime-alerie.atwebpages.com/api/'
 };
 
 /*

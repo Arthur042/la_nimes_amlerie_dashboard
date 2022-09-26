@@ -1,6 +1,6 @@
 
 import { Component, OnInit } from '@angular/core';
-import { Graph1 } from 'src/app/models/graph1';
+import {Recurrance} from 'src/app/models/graph1';
 import { StatsService } from 'src/app/services/stats.service';
 
 @Component({
@@ -9,17 +9,12 @@ import { StatsService } from 'src/app/services/stats.service';
   styleUrls: ['./graph1.component.css']
 })
 export class Graph1Component implements OnInit {
-  single : Graph1[] = [
-    {
-      "name": "Nouveau client",
-      "value": 136
-    },
-    {
-      "name": "Client existant",
-      "value": 195
-    },
-  ];
+  single : Recurrance[] = [];
   ngOnInit(): void {
+    this.statsService.getRecurance().subscribe(data => {
+        this.single = data;
+      }
+    )
   }
   // options
   gradient: boolean = true;
@@ -28,6 +23,6 @@ export class Graph1Component implements OnInit {
   isDoughnut: boolean = true;
 
   constructor(private statsService: StatsService) { }
-  
+
 
 }

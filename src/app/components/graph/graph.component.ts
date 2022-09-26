@@ -1,5 +1,4 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Stats } from 'src/app/models/stats';
 import { SignInService } from 'src/app/services/sign-in.service';
 import { StatsService } from 'src/app/services/stats.service';
 
@@ -10,17 +9,15 @@ import { StatsService } from 'src/app/services/stats.service';
 })
 export class GraphComponent implements OnInit {
 
-  stats : Stats = new Stats();
+  stats : any = {};
   moyPanier ?: number;
   constructor(private signInservice : SignInService, private statsService: StatsService) { }
 
   ngOnInit(): void {
     this.statsService.getStats().subscribe(data => {
-      this.stats = data;
-      if (this.stats.montantVenteTotal && this.stats.nbCommand) {
-      this.moyPanier = Math.round(this.stats.montantVenteTotal / this.stats.nbCommand);
-    }
-  })
+        this.stats = data;
+      }
+    )
   }
 
   logOut() :void {

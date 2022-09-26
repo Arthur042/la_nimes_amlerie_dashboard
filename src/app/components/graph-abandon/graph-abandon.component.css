@@ -8,12 +8,12 @@ h3{
     margin: 0;
 }
 
-ngx-charts-bar-vertical-2d{
-    position: absolute;
-    top: 60px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
+ngx-charts-advanced-pie-chart{
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 100%;
+  height: 100%;
 }
 
 p{
@@ -23,8 +23,8 @@ p{
 div{
     float: right;
 }
-h2{
-    margin-bottom: .3rem;
-    font-size: 2rem;
-    color: rgb(255, 61, 0);
+h2 {
+  margin-bottom: .3rem;
+  font-size: 2rem;
+  color: rgb(255, 61, 0);
 }

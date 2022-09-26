@@ -6,7 +6,7 @@ import { AuthGuard } from "./shared/auth.guard";
 
 const routes: Routes = [
   {path: '', component: SignInComponent},
-  {path: 'graphique', component: GraphComponent, canActivate: [AuthGuard]},
+  {path: 'graphique', component: GraphComponent},
 ];
 
 @NgModule({
