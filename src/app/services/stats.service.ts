@@ -46,4 +46,8 @@ export class StatsService {
   getVisitorPart() :Observable<any> {
     return this.http.get<any>(this.apiUrl + 'stats/number_visitors');
   }
+
+  getNewUser() :Observable<any> {
+    return this.http.get<any>(this.apiUrl + 'stats/new_client');
+  }
 }
